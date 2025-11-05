@@ -9,6 +9,7 @@ window.addEventListener("load", function() {
 	video.loop = false;
 	video.autoplay = false;
 	slider.value = 0;
+	video.volume = 0;
 });
 
 // Play button
@@ -18,6 +19,7 @@ document.querySelector("#play").addEventListener("click", function(){
 	video.play();
 	if (count == 0){ // check if this is the first time clicking the button
 		slider.value = 100;
+		video.volume = 1;
 		volumeSpan.innerHTML = slider.value + "%";
 	}
 	count += 1;
