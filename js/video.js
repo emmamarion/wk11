@@ -1,3 +1,5 @@
+// Emma Marion
+// When page loads slider should be 0 and go to 100 on video play
 let video = document.querySelector("#player1")
 
 window.addEventListener("load", function() {
@@ -39,18 +41,23 @@ document.querySelector("#skip").addEventListener("click", function(){
 	video.currentTime += 15;
 });
 
+// Mute button
 document.querySelector("#mute").addEventListener("click", function(){
-	let muteButton= document.querySelector("#mute");
+	// If video is muted
 	if (video.muted){
 		video.muted = false;
-		muteButton.innerHTML = "Muted"
+		this.innerHTML = "Muted"
 	}else{
 		video.muted = true;
-		muteButton.innerHTML = "Unmute"
+		this.innerHTML = "Unmute"
 	}
-	
 });
 
+document.querySelector("#slider").addEventListener("change", function(){
+	const sliderValue = this.value;
+	console.log("New slider value is: " + sliderValue)
+	video.volume = sliderValue
+});
 
 function play(){
 	console.log("In play")
