@@ -9,16 +9,18 @@ window.addEventListener("load", function() {
 	video.loop = false;
 	video.autoplay = false;
 	slider.value = 0;
-	volumeSpan.innerHTML = slider.value + "%";
-
 });
 
 // Play button
+let count = 0;
 document.querySelector("#play").addEventListener("click", function(){
 	console.log("Play video");
 	video.play();
-	slider.value = 100;
-	volumeSpan.innerHTML = slider.value + "%";
+	if (count == 0){ // check if this is the first time clicking the button
+		slider.value = 100;
+		volumeSpan.innerHTML = slider.value + "%";
+	}
+	count += 1;
 });
 
 // Pause button
@@ -45,7 +47,7 @@ document.querySelector("#faster").addEventListener("click", function(){
 // Skip button
 document.querySelector("#skip").addEventListener("click", function(){
 	console.log("Play video");
-	video.currentTime += 15;
+	video.currentTime += 10;
 });
 
 // Mute button
