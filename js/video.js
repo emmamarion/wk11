@@ -1,15 +1,15 @@
 // Emma Marion
 
-let video = document.querySelector("#player1") // video element
-let slider = document.querySelector("#slider") // slider element
-let volumeSpan = document.querySelector("#volume") // Get the span element that houses the current volume level
+let video = document.querySelector("#player1"); // video element
+let slider = document.querySelector("#slider"); // slider element
+let volumeSpan = document.querySelector("#volume"); // Get the span element that houses the current volume level
 
 window.addEventListener("load", function() {
 	console.log("Good job opening the window");
 	video.loop = false;
 	video.autoplay = false;
 	slider.value = 0;
-	volumeSpan.innerHTML = slider.value + "%"
+	volumeSpan.innerHTML = slider.value + "%";
 
 });
 
@@ -18,7 +18,7 @@ document.querySelector("#play").addEventListener("click", function(){
 	console.log("Play video");
 	video.play();
 	slider.value = 100;
-	volumeSpan.innerHTML = slider.value + "%"
+	volumeSpan.innerHTML = slider.value + "%";
 });
 
 // Pause button
@@ -66,21 +66,21 @@ document.querySelector("#slider").addEventListener("change", function(){
 
 	console.log("New slider value is: " + sliderValue);
 	video.volume = sliderValue * 0.01; // update video volume
-	volumeSpan.innerHTML = sliderValue + "%" // update volume display text 
+	volumeSpan.innerHTML = sliderValue + "%"; // update volume display text 
 
 });
 
 // Vintage buttonx
 document.querySelector("#vintage").addEventListener("click", function(){
-	console.log("Going old school!")
-	video.classList.add("oldSchool")
-})
+	console.log("Going old school!");
+	video.classList.add("oldSchool");
+});
 
 // Original button
 document.querySelector("#orig").addEventListener("click", function(){
-	console.log("Back to normal!")
-	video.classList.remove("oldSchool")
-})
+	console.log("Back to normal!");
+	video.classList.remove("oldSchool");
+});
 
 function play(){
 	console.log("In play")
